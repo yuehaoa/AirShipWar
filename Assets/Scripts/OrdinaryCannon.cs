@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class OrdinaryCannon : MonoBehaviour
 {
-     public GameObject bullet;
-     private Vector3 direction = new Vector3(1, 0, 0);
+    public GameObject bullet;
+    private Vector3 direction = new Vector3(1, 0, 0);
      // Start is called before the first frame update
      void Start()
      {
@@ -18,7 +18,6 @@ public class OrdinaryCannon : MonoBehaviour
 
          if(Input.GetMouseButtonDown(0))
          {
-             Debug.Log("123");
              if (!EventSystem.current.IsPointerOverGameObject())
              {
                  Fire();
