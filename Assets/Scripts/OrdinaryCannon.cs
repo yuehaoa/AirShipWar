@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class OrdinaryCannon : MonoBehaviour
+
+public class OrdinaryCannon : Cannon
 {
-    public GameObject bullet;
     public GameObject text;
     public GameObject cannonCount;
     /*用来只执行一次text的内容*/

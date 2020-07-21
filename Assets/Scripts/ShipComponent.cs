@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShipComponent : MonoBehaviour
+/// <summary>
+/// 结构块
+/// </summary>
+public class ShipComponent : Struct
 {
     public float fullHP = 100;
     public float currentHP;

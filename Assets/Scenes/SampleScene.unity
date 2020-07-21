@@ -421,6 +421,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &45089130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -891,6 +899,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!1 &192678738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1333,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &335324774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1434,6 +1458,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &421543742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1796,6 +1828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3756744639262943257, guid: 67b580f0e272c614da8aca6d08af9481, type: 3}
   text: {fileID: 0}
+  cannonCount: {fileID: 0}
+  count: 0
+  bulletCount: 10
 --- !u!1 &605661079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,6 +2085,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &641881723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2161,6 +2204,7 @@ MonoBehaviour:
   down: 0
   left: 0
   right: 0
+  count: 0
 --- !u!1 &755008495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +4045,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &1694183772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4313,6 +4365,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &1768213372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4719,6 +4779,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!1 &1870257090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5611,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &2055279388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5648,6 +5724,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!65 &2063932924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5984,6 +6068,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb67d3111691e499ce574761fd4dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHP: 100
+  currentHP: 0
+  protect: 0
+  hpSlider: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
+  magazineExplosion: {fileID: 0}
+  hpCount: {fileID: 0}
+  radius: 3
 --- !u!114 &2104306700
 MonoBehaviour:
   m_ObjectHideFlags: 0
