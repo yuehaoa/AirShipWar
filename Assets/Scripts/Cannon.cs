@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 大炮
 /// </summary>
-public class Cannon : Struct
+public class Cannon : ShipComponent
 {
     /// <summary>
     /// 子弹
