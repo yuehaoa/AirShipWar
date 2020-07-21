@@ -6,55 +6,59 @@ using UnityEngine.UI;
 
 public class OrdinaryCannon : Cannon
 {
-    public GameObject text;
+    public Text textOfBullet;
     public GameObject cannonCount;
     /*用来只执行一次text的内容*/
     public int count = 0;
-    public int bulletCount = 10;
     private Vector3 direction = new Vector3(1, 0, 0);
-     // Start is called before the first frame update
-     void Start()
-     {
+    // Start is called before the first frame update
+    void Start()
+    {
+        textOfBullet = GetComponentInChildren<Text>();
+        textOfBullet.color = Color.yellow;
     }
 
-     // Update is called once per frame
-     void Update()
-     {
-        text = GameObject.Find("textCube");
+    // Update is called once per frame
+    void Update()
+    {
         cannonCount = GameObject.Find("cannonCount");
+        // 按下鼠标左键
         if (Input.GetMouseButtonDown(0))
-         {
+        {
+            // 按在屏幕上，没有按在物体上
             if (!EventSystem.current.IsPointerOverGameObject())
-             {
-                if (bulletCount > 0)
+            {
+                if (ammunitionQuantity > 0)
                 {
                     Fire();
-                    bulletCount--;
-                    cannonCount.GetComponentInChildren<Text>().text = "炮弹数量: "+bulletCount.ToString();
+                    
                 }
                 else
                 {
-                    text.GetComponentInChildren<Text>().text = "你已经没有子弹了";
+                    textOfBullet.text = "你已经没有子弹了";
                 }
                 if (count == 0)
                 {
-                    text.GetComponentInChildren<Text>().text = "做的很好，你可以尝试击毁敌方飞船了";
+                    textOfBullet.text = "做的很好，你可以尝试击毁敌方飞船了";
                     count++;
                 }
-            }         
+            }
         }
-     }
+    }
 
-     public void Fire()
-     {
+    public void Fire()
+    {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        // 因为是2D
         mousePosition.z = 0;
+
         // 子弹角度
-        float fireAngle = Vector2.Angle(mousePosition - this.transform.position, Vector2.up);
+        float fireAngle = Vector2.Angle(mousePosition - transform.position, Vector2.up);
         GameObject gameObject = Instantiate(bullet, transform.position, Quaternion.identity);
-        gameObject.GetComponent<Rigidbody>().velocity = ((mousePosition - transform.position).normalized * 30);
+        gameObject.GetComponent<Rigidbody>().velocity = (mousePosition - transform.position).normalized * 30;
         gameObject.transform.eulerAngles = new Vector3(0, 0, fireAngle);
+
+        ammunitionQuantity--;
+        textOfBullet.text = "炮弹数量: " + ammunitionQuantity.ToString();
     }
 }

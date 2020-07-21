@@ -7,7 +7,15 @@ using UnityEngine;
 /// </summary>
 public class Cannon : Struct
 {
+    /// <summary>
+    /// 子弹
+    /// </summary>
     public GameObject bullet;
+    /// <summary>
+    /// 弹药量
+    /// </summary>
+    public int ammunitionQuantity = 5;
+
     // Start is called before the first frame update
     void Start()
     {
