@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class shipComponent : MonoBehaviour
+public class ShipComponent : MonoBehaviour
 {
     public float fullHP = 100;
     public float currentHP;
@@ -11,27 +11,30 @@ public class shipComponent : MonoBehaviour
     public Slider hpSlider;
     public GameObject explosionEffectPrefab;
     public GameObject magazineExplosion;
+    public GameObject hpCount;
     public float radius = 3.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHP = fullHP;
-        hpSlider.gameObject.SetActive(false);
+        //hpSlider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hpSlider.value <= 0.6f)
+        /*if (hpSlider.value <= 0.6f)
         {
             hpSlider.gameObject.SetActive(true);
-        }
+        }*/
     }
 
     public void damage(float damageValue)
     {
+        hpCount = GameObject.Find("fullHp");
         currentHP -= damageValue*(1-protect);
+        hpCount.GetComponentInChildren<Text>().text = "生命值: " + currentHP.ToString()+ "HP";
         if (currentHP<=0)
         {
             GameObject effect;
@@ -46,9 +49,9 @@ public class shipComponent : MonoBehaviour
                 {
                     if (m_cCollider[i].gameObject != this.gameObject)
                     {
-                        if(m_cCollider[i].gameObject.GetComponent<shipComponent>())
+                        if(m_cCollider[i].gameObject.GetComponent<ShipComponent>())
                         {
-                            m_cCollider[i].gameObject.GetComponent<shipComponent>().damage(fullHP * 0.4f);
+                            m_cCollider[i].gameObject.GetComponent<ShipComponent>().damage(fullHP * 0.4f);
                         }
                     }
                 }
@@ -61,10 +64,10 @@ public class shipComponent : MonoBehaviour
                 Destroy(effect, 1);
                 Destroy(this.gameObject);
             }
-        } else
+        } /*else
         {
             hpSlider.value = (float)currentHP / fullHP;
-        }
+        }*/
     }
 
     //void OnCollisionEnter(Collision collision)
