@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 public class OrdinaryCannon : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject text;
+    public GameObject cannonCount;
+    /*用来只执行一次text的内容*/
+    public int count = 0;
+    public int bulletCount = 10;
     private Vector3 direction = new Vector3(1, 0, 0);
      // Start is called before the first frame update
      void Start()
@@ -15,14 +20,29 @@ public class OrdinaryCannon : MonoBehaviour
      // Update is called once per frame
      void Update()
      {
-
-         if(Input.GetMouseButtonDown(0))
+        text = GameObject.Find("textCube");
+        cannonCount = GameObject.Find("cannonCount");
+        if (Input.GetMouseButtonDown(0))
          {
-             if (!EventSystem.current.IsPointerOverGameObject())
+            if (!EventSystem.current.IsPointerOverGameObject())
              {
-                 Fire();
-             }
-         }
+                if (bulletCount > 0)
+                {
+                    Fire();
+                    bulletCount--;
+                    cannonCount.GetComponentInChildren<Text>().text = "炮弹数量: "+bulletCount.ToString();
+                }
+                else
+                {
+                    text.GetComponentInChildren<Text>().text = "你已经没有子弹了";
+                }
+                if (count == 0)
+                {
+                    text.GetComponentInChildren<Text>().text = "做的很好，你可以尝试击毁敌方飞船了";
+                    count++;
+                }
+            }         
+        }
      }
 
      public void Fire()
