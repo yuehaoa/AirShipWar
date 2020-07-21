@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 所有船体部件的基类
+/// 子弹、炮弹的基类
 /// </summary>
-public abstract class ShipComponent : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    public int fullHP = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +17,10 @@ public abstract class ShipComponent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

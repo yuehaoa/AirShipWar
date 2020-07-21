@@ -18,18 +18,16 @@ public class OrdinaryBullet : Bullet
         
     }
 
-    void OnBecameInvisible()
-    {
-        //if(gameObject)
-        //{
-        //    Destroy(gameObject);
-        //}
-    }
+    //public void OnBecameInvisible()
+    //{
+    //    Destroy(gameObject);
+    //}
 
-    void OnCollisionEnter(Collision col)
+    public void OnCollisionEnter(Collision col)
     {
         //GameObject effect = Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
-        col.gameObject.GetComponentInChildren<Structure>().Damage(30);
+        var x = col.gameObject.GetComponentInChildren<ShipComponent>();
+        x.Damage(30);
         //Destroy(effect, 1);
         Destroy(gameObject);
     }
