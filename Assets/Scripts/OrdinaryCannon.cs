@@ -31,7 +31,7 @@ public class OrdinaryCannon : Cannon
                 if (ammunitionQuantity > 0)
                 {
                     Fire();
-                    
+
                 }
                 else
                 {
@@ -53,10 +53,8 @@ public class OrdinaryCannon : Cannon
         mousePosition.z = 0;
 
         // 子弹角度
-        float fireAngle = Vector2.Angle(mousePosition - transform.position, Vector2.up);
-        GameObject gameObject = Instantiate(bullet, transform.position+new Vector3(0.6F,0,0), Quaternion.identity);
-        gameObject.GetComponent<Rigidbody>().velocity = (mousePosition - transform.position).normalized * 30;
-        gameObject.transform.eulerAngles = new Vector3(0, 0, fireAngle);
+        GameObject gameObject = Instantiate(bullet, transform.position + new Vector3(0.6F, 0, 0), Quaternion.identity);
+        gameObject.GetComponent<Rigidbody>().AddForce((mousePosition - transform.position).normalized * 50);
 
         ammunitionQuantity--;
         textOfBullet.text = "炮弹数量: " + ammunitionQuantity.ToString();

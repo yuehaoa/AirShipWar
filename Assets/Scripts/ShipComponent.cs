@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public abstract class ShipComponent : MonoBehaviour
 {
+    public int fullHP = 100;
     // Start is called before the first frame update
     void Start()
     {

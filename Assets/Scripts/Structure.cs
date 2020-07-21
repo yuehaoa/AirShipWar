@@ -8,7 +8,6 @@ using UnityEngine.UI;
 /// </summary>
 public class Structure : ShipComponent
 {
-    public int fullHP = 100;
     private int currentHP = 100;
     // public float protect;
     public Slider hpSlider;
