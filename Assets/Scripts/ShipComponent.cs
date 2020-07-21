@@ -8,40 +8,37 @@ using UnityEngine.UI;
 /// </summary>
 public class ShipComponent : Struct
 {
-    public float fullHP = 100;
-    public float currentHP;
-    public float protect;
+    public int fullHP = 100;
+    public int currentHP = 100;
+    // public float protect;
     public Slider hpSlider;
     public GameObject explosionEffectPrefab;
-    public GameObject magazineExplosion;
-    public GameObject hpCount;
-    public float radius = 3.0f;
+    // public GameObject magazineExplosion;
 
     // Start is called before the first frame update
     void Start()
     {
+        hpSlider = GetComponentInChildren<Slider>();
+        hpSlider.maxValue = fullHP;
+        hpSlider.value = fullHP;
         currentHP = fullHP;
-        //hpSlider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (hpSlider.value <= 0.6f)
-        {
-            hpSlider.gameObject.SetActive(true);
-        }*/
+
     }
 
-    public void damage(float damageValue)
+    public void Damage(int damageValue)
     {
-        hpCount = GameObject.Find("fullHp");
-        currentHP -= damageValue*(1-protect);
-        hpCount.GetComponentInChildren<Text>().text = "生命值: " + currentHP.ToString()+ "HP";
-        if (currentHP<=0)
+        currentHP -= damageValue;
+        hpSlider.value = currentHP;
+        Debug.Log(currentHP);
+        if (currentHP <= 0)
         {
             GameObject effect;
-            if (gameObject.name== "magazineComp")
+            /*if (gameObject.name== "magazineComp")
             {
                 Vector3 pos = transform.position;
                 pos.x -= 0.8f;
@@ -60,17 +57,11 @@ public class ShipComponent : Struct
                 }
                 Destroy(effect, 2f);
                 Destroy(this.gameObject);
-            }
-            else
-            {
-                effect = GameObject.Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
-                Destroy(effect, 1);
-                Destroy(this.gameObject);
-            }
-        } /*else
-        {
-            hpSlider.value = (float)currentHP / fullHP;
-        }*/
+            }*/
+            effect = Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
+            Destroy(effect, 1);
+            Destroy(gameObject);
+        }
     }
 
     //void OnCollisionEnter(Collision collision)
