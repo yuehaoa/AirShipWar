@@ -54,7 +54,7 @@ public class OrdinaryCannon : Cannon
 
         // 子弹角度
         float fireAngle = Vector2.Angle(mousePosition - transform.position, Vector2.up);
-        GameObject gameObject = Instantiate(bullet, transform.position, Quaternion.identity);
+        GameObject gameObject = Instantiate(bullet, transform.position+new Vector3(0.6F,0,0), Quaternion.identity);
         gameObject.GetComponent<Rigidbody>().velocity = (mousePosition - transform.position).normalized * 30;
         gameObject.transform.eulerAngles = new Vector3(0, 0, fireAngle);
 

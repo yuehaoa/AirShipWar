@@ -20,10 +20,10 @@ public class OrdinaryBullet : Bullet
 
     void OnBecameInvisible()
     {
-        if(gameObject)
-        {
-            Destroy(gameObject);
-        }
+        //if(gameObject)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     void OnCollisionEnter(Collision col)
