@@ -29,8 +29,8 @@ public class OrdinaryBullet : Bullet
     void OnCollisionEnter(Collision col)
     {
         GameObject effect = GameObject.Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
+        col.gameObject.GetComponent<ShipComponent>().damage(10);
         Destroy(effect, 1);
-        col.gameObject.GetComponent<shipComponent>().damage(10);
         if (gameObject)
         {
             Destroy(gameObject);
