@@ -42,13 +42,7 @@ public class Armour : ShipComponent
         {
             currentHP -= damageValue;
             hpSlider.value = currentHP;
-            if (currentHP <= 0)
-            {
-                GameObject effect;
-                effect = Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
-                Destroy(effect, 1);
-                Destroy(gameObject);
-            }
-        };
+            if (currentHP <= 0) OnHp0();
+        }
     }
 }
