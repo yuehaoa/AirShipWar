@@ -19,16 +19,20 @@ public class Armour : ShipComponent
     {
         base.Start();
         // 第二个Slider是护甲
-        armSlider = GetComponentsInChildren<Slider>()[1];
+        armSlider = GetComponentsInChildren<Slider>()[0];
         armSlider.maxValue = armor;
         armSlider.value = armor;
         currentArmor = armor;
+        armSlider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (armSlider.value / armor <= 0.6f)
+        {
+            armSlider.gameObject.SetActive(true);
+        }
     }
 
     override public void Damage(int damageValue)

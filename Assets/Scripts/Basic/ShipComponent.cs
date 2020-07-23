@@ -22,6 +22,13 @@ public class ShipComponent : MonoBehaviour
     /// </summary>
     public int firePossibility = 20;
 
+    void Update()
+    {
+        if (hpSlider.value / fullHP <= 0.6f)
+        {
+            hpSlider.gameObject.SetActive(true);
+        }
+    }
 
     public void Start()
     {
@@ -30,6 +37,7 @@ public class ShipComponent : MonoBehaviour
         hpSlider.maxValue = fullHP;
         hpSlider.value = fullHP;
         currentHP = fullHP;
+        hpSlider.gameObject.SetActive(false);
     }
 
     public void SetFire()
