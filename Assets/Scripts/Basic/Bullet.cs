@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+/// <summary>
+/// 子弹、炮弹的基类
+/// </summary>
+public class Bullet : MonoBehaviour
 {
-    protected Vector3 size;
-    protected float mass;
-    protected Vector3 velocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +17,10 @@ public abstract class Bullet : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
