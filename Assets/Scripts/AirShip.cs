@@ -13,10 +13,16 @@ public class AirShip : MonoBehaviour
     public bool left = false;
     public bool right = false;
     public int count = 0;
+    public Slider waterSlider;
     void Start()
     {
         //添加大炮
         
+    }
+
+    public void DecreaseWater(int value)
+    {
+        waterSlider.value -= value;
     }
 
     // Update is called once per frame

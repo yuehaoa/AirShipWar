@@ -19,6 +19,7 @@ public class ShipComponent : MonoBehaviour
     Coroutine fireCt;
     public GameObject putOutFirePrefab;
     protected GameObject putOutFire;
+    
     /// <summary>
     /// 起火概率，百分之多少
     /// </summary>
@@ -45,6 +46,7 @@ public class ShipComponent : MonoBehaviour
 
     public void SetFire()
     {
+        
         // 防止部件多次着火
         if (isOnFire) return;
         putOutFire = Instantiate(putOutFirePrefab, transform.position + new Vector3(0,0,-2), transform.rotation, GetComponentInChildren<Canvas>().transform);
@@ -56,6 +58,7 @@ public class ShipComponent : MonoBehaviour
 
     public void Outfire()
     {
+        GetComponentInParent<AirShip>().DecreaseWater(10);
         Destroy(putOutFire);
         isOnFire = false;
         StopCoroutine(fireCt);
