@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeGameSpeed()
     {
-        if (!pause)
+        if (pause)
         {
             Time.timeScale = 1;
             bgAudio = transform.GetComponent<AudioSource>();
