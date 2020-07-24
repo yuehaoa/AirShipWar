@@ -2973,6 +2973,7 @@ MonoBehaviour:
   down: 0
   left: 0
   right: 0
+  isMyship: 1
   count: 0
   waterSlider: {fileID: 1920855567}
 --- !u!1 &745171532
@@ -8389,8 +8390,9 @@ MonoBehaviour:
   down: 0
   left: 0
   right: 0
+  isMyship: 0
   count: 0
-  waterSlider: {fileID: 0}
+  waterSlider: {fileID: 1803288273}
 --- !u!1 &2068725497
 GameObject:
   m_ObjectHideFlags: 0
