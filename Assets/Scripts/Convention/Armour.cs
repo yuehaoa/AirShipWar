@@ -29,6 +29,7 @@ public class Armour : ShipComponent
     // Update is called once per frame
     void Update()
     {
+        base.Update();
         if (armSlider.value / armor <= 0.6f)
         {
             armSlider.gameObject.SetActive(true);

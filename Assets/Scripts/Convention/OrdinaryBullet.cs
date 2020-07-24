@@ -27,6 +27,7 @@ public class OrdinaryBullet : Bullet
     {
         //GameObject effect = Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
         var x = col.gameObject.GetComponentInChildren<ShipComponent>();
+        if (x == null) return;
         x.Damage(30);
         //Destroy(effect, 1);
         Destroy(gameObject);
