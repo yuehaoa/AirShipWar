@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class OrdinaryCannon : Cannon
 {
     public Text textOfBullet;
-
+    static public bool isFired = false;
 
     public GameObject cannonCount;
     /*用来只执行一次text的内容*/
@@ -23,6 +23,7 @@ public class OrdinaryCannon : Cannon
     // Update is called once per frame
     void Update()
     {
+        base.Update();
         //cannonCount = GameObject.Find("cannonCount");
         // 按下鼠标左键
         if (Input.GetMouseButtonDown(0))
@@ -49,6 +50,8 @@ public class OrdinaryCannon : Cannon
 
     public void Fire()
     {
+        if (isFired == false)
+            isFired = true;
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         mousePosition.z = 0;
