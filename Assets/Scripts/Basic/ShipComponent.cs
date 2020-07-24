@@ -46,7 +46,10 @@ public class ShipComponent : MonoBehaviour
 
     public void SetFire()
     {
-        
+        if(AirShip.count == 4)
+        {
+            AirShip.count++;
+        }
         // 防止部件多次着火
         if (isOnFire) return;
         putOutFire = Instantiate(putOutFirePrefab, transform.position + new Vector3(0,0,-2), transform.rotation, GetComponentInChildren<Canvas>().transform);
@@ -58,6 +61,10 @@ public class ShipComponent : MonoBehaviour
 
     public void Outfire()
     {
+        if (AirShip.count == 5)
+        {
+            AirShip.count++;
+        }
         GetComponentInParent<AirShip>().DecreaseWater(10);
         Destroy(putOutFire);
         isOnFire = false;
@@ -69,11 +76,15 @@ public class ShipComponent : MonoBehaviour
     {
         currentHP -= damageValue;
         if (currentHP <= 0) OnHp0();
-        if (Random.Range(0, 99) < firePossibility) SetFire();
+        if (Random.Range(0, 99) < firePossibility && AirShip.count >= 4) SetFire();
     }
 
     public virtual void OnHp0()
     {
+        if (AirShip.count == 6)//第一次组件损毁
+        {
+            AirShip.count++;
+        }
         GameObject effect = Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
         Destroy(effect, 1);
         Destroy(fireEffect);

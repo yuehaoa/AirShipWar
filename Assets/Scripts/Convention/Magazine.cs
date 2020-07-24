@@ -6,6 +6,10 @@ public class Magazine : ShipComponent
 {
     public override void OnHp0()
     {
+        if (AirShip.count == 7)//第一次弹药库损毁
+        {
+            AirShip.count++;
+        }
         Collider[] colliders = Physics.OverlapSphere(transform.position, 2);
         foreach(Collider collider in colliders)
         {
