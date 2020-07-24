@@ -31,6 +31,15 @@ public class OrdinaryCannon : Cannon
             // 按在屏幕上，没有按在物体上
             if (!EventSystem.current.IsPointerOverGameObject())
             {
+                if(AirShip.count == 1)
+                {
+                    AirShip.count++;
+                }
+                else if (AirShip.count == 2&& ammunitionQuantity==47)
+                {
+                    AirShip.count++;
+                }
+
                 if (ammunitionQuantity > 0)
                 {
                     Fire();

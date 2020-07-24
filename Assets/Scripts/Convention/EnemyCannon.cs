@@ -11,7 +11,7 @@ public class EnemyCannon : Cannon
     // Start is called before the first frame update
     new public void Start()
     {
-        ammunitionQuantity = 10;
+        ammunitionQuantity = 25;
         base.Start();
         textOfBullet = GetComponentInChildren<Text>();
         textOfBullet.color = Color.yellow;

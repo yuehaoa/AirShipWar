@@ -30,7 +30,7 @@ public class Armour : ShipComponent
     void Update()
     {
         base.Update();
-        if (armSlider.value / armor <= 0.6f)
+        if (armSlider.value<armor)
         {
             armSlider.gameObject.SetActive(true);
         }
@@ -38,6 +38,11 @@ public class Armour : ShipComponent
 
     override public void Damage(int damageValue)
     {
+        if (AirShip.count == 3)
+        {
+            AirShip.count++;
+        }
+
         if (currentArmor > 0)
         {
             currentArmor -= damageValue / 6;
