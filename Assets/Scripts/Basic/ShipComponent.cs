@@ -25,9 +25,10 @@ public class ShipComponent : MonoBehaviour
     /// </summary>
     public int firePossibility = 100;
 
-    void Update()
+    public void Update()
     {
-        if (hpSlider.value / fullHP <= 0.6f)
+        hpSlider.value = currentHP;
+        if (hpSlider.value < fullHP)
         {
             hpSlider.gameObject.SetActive(true);
         }
@@ -35,7 +36,7 @@ public class ShipComponent : MonoBehaviour
 
     public void Start()
     {
-        hpSlider = GetComponentInChildren<Slider>();
+        hpSlider = GetComponentInChildren<Slider>(true);
         hpSlider.interactable = false;
         hpSlider.maxValue = fullHP;
         hpSlider.value = fullHP;
@@ -67,7 +68,6 @@ public class ShipComponent : MonoBehaviour
     public virtual void Damage(int damageValue)
     {
         currentHP -= damageValue;
-        hpSlider.value = currentHP;
         if (currentHP <= 0) OnHp0();
         if (Random.Range(0, 99) < firePossibility) SetFire();
     }
