@@ -15,12 +15,14 @@ public class ShipComponent : MonoBehaviour
     public Slider hpSlider;
     public GameObject explosionEffectPrefab;
     public GameObject fireEffectPrefab;
-    public GameObject fireEffect;
+    protected GameObject fireEffect;
     Coroutine fireCt;
+    public GameObject putOutFirePrefab;
+    protected GameObject putOutFire;
     /// <summary>
     /// 起火概率，百分之多少
     /// </summary>
-    public int firePossibility = 20;
+    public int firePossibility = 100;
 
     void Update()
     {
@@ -44,6 +46,8 @@ public class ShipComponent : MonoBehaviour
     {
         // 防止部件多次着火
         if (isOnFire) return;
+        putOutFire = Instantiate(putOutFirePrefab, transform.position + new Vector3(0,0,-2), transform.rotation, GetComponentInChildren<Canvas>().transform);
+        putOutFire.GetComponent<Button>().onClick.AddListener(Outfire);
         fireEffect = Instantiate(fireEffectPrefab, transform.position, transform.rotation);
         isOnFire = true;
         fireCt = StartCoroutine(CauseContinueDamage(0.3F));
@@ -51,6 +55,8 @@ public class ShipComponent : MonoBehaviour
 
     public void Outfire()
     {
+        Destroy(putOutFire);
+        isOnFire = false;
         StopCoroutine(fireCt);
         Destroy(fireEffect);
     }
@@ -63,7 +69,7 @@ public class ShipComponent : MonoBehaviour
         if (Random.Range(0, 99) < firePossibility) SetFire();
     }
 
-    public void OnHp0()
+    public virtual void OnHp0()
     {
         GameObject effect = Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
         Destroy(effect, 1);

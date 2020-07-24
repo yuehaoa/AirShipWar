@@ -428,7 +428,7 @@ MonoBehaviour:
   explosionEffectPrefab: {fileID: 6497758622842261034, guid: e7d7befce8a608b459d1ef074189b1c5,
     type: 3}
   fireEffectPrefab: {fileID: 0}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
 --- !u!65 &45089130
 BoxCollider:
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   hpSlider: {fileID: 0}
   explosionEffectPrefab: {fileID: 0}
   fireEffectPrefab: {fileID: 0}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
   bullet: {fileID: 3756744639262943257, guid: 67b580f0e272c614da8aca6d08af9481, type: 3}
   ammunitionQuantity: 50
@@ -1500,8 +1500,9 @@ MonoBehaviour:
     type: 3}
   fireEffectPrefab: {fileID: 4116178993858980854, guid: 08058c20e3c1b35498294ff2fe63c165,
     type: 3}
-  fireEffect: {fileID: 0}
-  firePossibility: 20
+  putOutFirePrefab: {fileID: 7039235977972686689, guid: 093118c26941494488c5121998d22983,
+    type: 3}
+  firePossibility: 100
 --- !u!65 &335324774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1692,7 +1693,7 @@ MonoBehaviour:
     type: 3}
   fireEffectPrefab: {fileID: 4116178993858980854, guid: 08058c20e3c1b35498294ff2fe63c165,
     type: 3}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
 --- !u!65 &421543742
 BoxCollider:
@@ -2360,7 +2361,7 @@ MonoBehaviour:
     type: 3}
   fireEffectPrefab: {fileID: 4116178993858980854, guid: 08058c20e3c1b35498294ff2fe63c165,
     type: 3}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
 --- !u!65 &641881723
 BoxCollider:
@@ -5174,7 +5175,7 @@ MonoBehaviour:
   explosionEffectPrefab: {fileID: 6497758622842261034, guid: e7d7befce8a608b459d1ef074189b1c5,
     type: 3}
   fireEffectPrefab: {fileID: 0}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
 --- !u!65 &1694183772
 BoxCollider:
@@ -5646,7 +5647,8 @@ MonoBehaviour:
     type: 3}
   fireEffectPrefab: {fileID: 4116178993858980854, guid: 08058c20e3c1b35498294ff2fe63c165,
     type: 3}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 7039235977972686689, guid: 093118c26941494488c5121998d22983,
+    type: 3}
   firePossibility: 20
 --- !u!65 &1768213372
 BoxCollider:
@@ -6338,7 +6340,7 @@ MonoBehaviour:
   explosionEffectPrefab: {fileID: 6497758622842261034, guid: e7d7befce8a608b459d1ef074189b1c5,
     type: 3}
   fireEffectPrefab: {fileID: 0}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
   armSlider: {fileID: 1864836912}
   armor: 25
@@ -7175,7 +7177,7 @@ MonoBehaviour:
     type: 3}
   fireEffectPrefab: {fileID: 4116178993858980854, guid: 08058c20e3c1b35498294ff2fe63c165,
     type: 3}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
 --- !u!65 &2055279388
 BoxCollider:
@@ -7289,7 +7291,7 @@ MonoBehaviour:
   explosionEffectPrefab: {fileID: 6497758622842261034, guid: e7d7befce8a608b459d1ef074189b1c5,
     type: 3}
   fireEffectPrefab: {fileID: 0}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
   armSlider: {fileID: 893162717}
   armor: 25
@@ -7638,7 +7640,7 @@ MonoBehaviour:
     type: 3}
   fireEffectPrefab: {fileID: 4116178993858980854, guid: 08058c20e3c1b35498294ff2fe63c165,
     type: 3}
-  fireEffect: {fileID: 0}
+  putOutFirePrefab: {fileID: 0}
   firePossibility: 20
   bullet: {fileID: 3756744639262943257, guid: 67b580f0e272c614da8aca6d08af9481, type: 3}
   ammunitionQuantity: 0

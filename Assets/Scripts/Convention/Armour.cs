@@ -19,7 +19,7 @@ public class Armour : ShipComponent
     {
         base.Start();
         // 第二个Slider是护甲
-        armSlider = GetComponentsInChildren<Slider>()[0];
+        armSlider = GetComponentsInChildren<Slider>(true)[1];
         armSlider.maxValue = armor;
         armSlider.value = armor;
         currentArmor = armor;
